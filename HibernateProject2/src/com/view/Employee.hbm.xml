@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 21, 2016 1:23:55 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.view.Employee" table="employee" catalog="demo">
+        <id name="employeeId" type="java.lang.Long">
+            <column name="employeeId" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" length="100" not-null="true" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="200" not-null="true" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="10" />
+        </property>
+        <property name="salary" type="Double">
+            <column name="salary" precision="18" scale="5" not-null="true" />
+        </property>
+        <property name="birthDate" type="date">
+            <column name="birth_date" length="0" not-null="true" />
+        </property>
+        <set name="skills" table="skill" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="employeeId" />
+            </key>
+            <one-to-many class="com.view.Skill" />
+        </set>
+    </class>
+</hibernate-mapping>

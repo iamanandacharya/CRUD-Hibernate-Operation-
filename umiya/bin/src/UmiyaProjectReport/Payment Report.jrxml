@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2e76e6f2-1c14-4fb7-a4e2-d99e6f966c53">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="paymentDate_parameter" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[SELECT
+     payment.`paymentId` AS payment_paymentId,
+     payment.`paymentMethodId` AS payment_paymentMethodId,
+     payment.`orderType` AS payment_orderType,
+     payment.`referenceId` AS payment_referenceId,
+     payment.`amount` AS payment_amount,
+     payment.`paymentDate` AS payment_paymentDate
+FROM
+     `payment` payment
+where
+ payment.`paymentDate` = $P{paymentDate_parameter}]]>
+	</queryString>
+	<field name="payment_paymentId" class="java.lang.Long"/>
+	<field name="payment_paymentMethodId" class="java.lang.Long"/>
+	<field name="payment_orderType" class="java.lang.String"/>
+	<field name="payment_referenceId" class="java.lang.Long"/>
+	<field name="payment_amount" class="java.lang.Double"/>
+	<field name="payment_paymentDate" class="java.sql.Date"/>
+	<variable name="amount_var" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{payment_amount}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="126" y="0" width="287" height="49" forecolor="#3399FF" uuid="59401dc2-98d4-4106-9537-69ef572e3294"/>
+				<textElement>
+					<font size="36"/>
+				</textElement>
+				<text><![CDATA[Umiya Chemicals]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="63" width="555" height="1" uuid="e016fc2b-f540-4f85-88c4-bbb32ae40ef7"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="26" forecolor="#FFFFFF" backcolor="#6666FF" uuid="a78f5f71-da20-4858-afaa-1efae67a403a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="26" width="555" height="26" uuid="b5354dd6-37f8-4a3f-9672-5b0243462660"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[This report displaly the information about Customer Bank Name,Branch Name,Cheque Date,Receieve date, Amount and status.This report is also display Customer Cheque Slip Information.Thanks for showing this information.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="63" width="555" height="1" uuid="a85d3f55-2123-4172-b2ae-eb8e4d0df539"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="92" height="20" forecolor="#FFFFFF" backcolor="#6666FF" uuid="268497ae-7b43-4b27-b9ea-1bdaa23438c6"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Payment Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="199" y="0" width="92" height="20" forecolor="#FFFFFF" backcolor="#6666FF" uuid="098da80c-bcb5-414b-8b94-4e28109c33ec"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Order Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="291" y="0" width="92" height="20" forecolor="#FFFFFF" backcolor="#6666FF" uuid="361b78e2-33f5-4c71-b271-d690e603fa20"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Reference Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="383" y="0" width="77" height="20" forecolor="#FFFFFF" backcolor="#6666FF" uuid="a04a33f6-cd6e-4d11-be72-cc12ed56dcdb"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="460" y="0" width="95" height="20" forecolor="#FFFFFF" backcolor="#6666FF" uuid="f97a6f68-5c79-490a-aa34-36c426e1afe6"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Payment Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="92" y="0" width="107" height="20" forecolor="#FFFFFF" backcolor="#6666FF" uuid="96838a43-7c27-4be5-9591-911bd7e91cff"/>
+				<box>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+					<topPen lineWidth="1.0" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Payment Method Id]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="92" height="20" uuid="d22b23fb-4e2a-4014-84c1-389bf7d1e18c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payment_paymentId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="92" y="0" width="107" height="20" uuid="623314b0-d70c-4c5b-8c0f-6bedb3d195e6"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payment_paymentMethodId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="199" y="0" width="92" height="20" uuid="99942947-daf4-4ff4-ac93-bd7b3a22c086"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payment_orderType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="291" y="0" width="92" height="20" uuid="be3657ef-5dc0-42bb-844a-1d0aba028e5f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payment_referenceId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="383" y="0" width="77" height="20" uuid="6a58731f-576b-4367-94be-3386cf01695e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payment_amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="0" width="95" height="20" uuid="646bd88f-80e8-4ca9-9a45-d813e03236c3"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payment_paymentDate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" uuid="10072076-54c9-4a73-a2cf-4aaa90825c5d"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="425" y="34" width="85" height="20" uuid="7a23121b-b049-4d00-add1-97dc1319f1bb"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="34" width="100" height="13" uuid="44974108-2bb8-415b-a742-0de7854c02ae"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="510" y="34" width="45" height="20" uuid="8f13809d-4903-4703-9479-bd11d6051ed2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="33" width="555" height="1" uuid="39bdb9d6-4bc6-4844-90f0-382c5005e16d"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="276" y="0" width="92" height="20" uuid="ffb7de2f-94a6-4822-8366-81e0b7d19bf8"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Total Amount]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="368" y="0" width="92" height="20" uuid="3d76729e-4951-4dab-9105-72be3b36d40e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{amount_var}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

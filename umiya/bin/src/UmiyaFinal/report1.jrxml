@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="47f5f82f-052f-48bd-a272-a0ccb73e73ec">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     *,
+     chequeddtable.`chequeId` AS chequeddtable_chequeId,
+     chequeddtable.`paymentId` AS chequeddtable_paymentId,
+     chequeddtable.`bankName` AS chequeddtable_bankName,
+     chequeddtable.`branchName` AS chequeddtable_branchName,
+     chequeddtable.`chequeDate` AS chequeddtable_chequeDate,
+     chequeddtable.`clearenceDate` AS chequeddtable_clearenceDate,
+     chequeddtable.`receieveDate` AS chequeddtable_receieveDate,
+     chequeddtable.`amount` AS chequeddtable_amount,
+     chequeddtable.`status` AS chequeddtable_status,
+     dealer.`dealerId` AS dealer_dealerId,
+     dealer.`name` AS dealer_name,
+     dealer.`city` AS dealer_city,
+     dealer.`zipCode` AS dealer_zipCode,
+     dealer.`state` AS dealer_state,
+     dealer.`mobileNo` AS dealer_mobileNo,
+     dealer.`phoneNo` AS dealer_phoneNo,
+     dealer.`faxNo` AS dealer_faxNo,
+     dealer.`email` AS dealer_email,
+     login.`loginId` AS login_loginId,
+     login.`userName` AS login_userName,
+     login.`password` AS login_password,
+     material.`materialId` AS material_materialId,
+     material.`materialName` AS material_materialName,
+     material.`materialType` AS material_materialType,
+     material.`materialPrice` AS material_materialPrice,
+     material.`materialQuality` AS material_materialQuality,
+     payment.`paymentId` AS payment_paymentId,
+     payment.`paymentMethodId` AS payment_paymentMethodId,
+     payment.`orderType` AS payment_orderType,
+     payment.`referenceId` AS payment_referenceId,
+     payment.`amount` AS payment_amount,
+     payment.`paymentDate` AS payment_paymentDate,
+     paymentmethod.`paymentMethodId` AS paymentmethod_paymentMethodId,
+     paymentmethod.`paymentMethodName` AS paymentmethod_paymentMethodName,
+     product.`productId` AS product_productId,
+     product.`productName` AS product_productName,
+     product.`productPrice` AS product_productPrice,
+     product.`productAvailablity` AS product_productAvailablity,
+     product.`productColor` AS product_productColor,
+     product.`productGrade` AS product_productGrade,
+     product.`productWeight` AS product_productWeight,
+     product.`productType` AS product_productType,
+     purchaseorder.`purchaseOrderId` AS purchaseorder_purchaseOrderId,
+     purchaseorder.`supplierId` AS purchaseorder_supplierId,
+     purchaseorder.`orderDate` AS purchaseorder_orderDate,
+     purchaseorder.`amount` AS purchaseorder_amount,
+     purchaseorder.`discount` AS purchaseorder_discount,
+     purchaseorder.`status` AS purchaseorder_status,
+     purchaseorderdetail.`purchaseOrderDetailId` AS purchaseorderdetail_purchaseOrderDetailId,
+     purchaseorderdetail.`purchaseOrderId` AS purchaseorderdetail_purchaseOrderId,
+     purchaseorderdetail.`materialId` AS purchaseorderdetail_materialId,
+     purchaseorderdetail.`quantity` AS purchaseorderdetail_quantity,
+     purchaseorderdetail.`unitPrice` AS purchaseorderdetail_unitPrice,
+     purchaseorderdetail.`totalPrice` AS purchaseorderdetail_totalPrice,
+     salesorder.`salesOrderId` AS salesorder_salesOrderId,
+     salesorder.`dealerId` AS salesorder_dealerId,
+     salesorder.`orderDate` AS salesorder_orderDate,
+     salesorder.`amount` AS salesorder_amount,
+     salesorder.`discount` AS salesorder_discount,
+     salesorder.`status` AS salesorder_status,
+     supplier.`supplierId` AS supplier_supplierId,
+     supplier.`name` AS supplier_name,
+     supplier.`city` AS supplier_city,
+     supplier.`zipCode` AS supplier_zipCode,
+     supplier.`state` AS supplier_state,
+     supplier.`mobileNo` AS supplier_mobileNo,
+     supplier.`faxNo` AS supplier_faxNo,
+     supplier.`phoneNo` AS supplier_phoneNo,
+     supplier.`email` AS supplier_email
+FROM
+     `chequeddtable` chequeddtable,
+     `dealer` dealer,
+     `login` login,
+     `material` material,
+     `payment` payment,
+     `paymentmethod` paymentmethod,
+     `product` product,
+     `purchaseorder` purchaseorder,
+     `purchaseorderdetail` purchaseorderdetail,
+     `salesorder` salesorder,
+     `supplier` supplier]]>
+	</queryString>
+	<field name="chequeId" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="paymentId" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bankName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="branchName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="chequeDate" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="clearenceDate" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="receieveDate" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dealerId" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="city" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="zipCode" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="state" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mobileNo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="phoneNo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="faxNo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="loginId" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="userName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="password" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="materialId" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="materialName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="materialType" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="materialPrice" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="materialQuality" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="paymentMethodId" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="orderType" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="referenceId" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="paymentDate" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="paymentMethodName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productId" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productPrice" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productAvailablity" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productColor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productGrade" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productWeight" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="productType" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchaseOrderId" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="supplierId" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="orderDate" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="discount" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchaseOrderDetailId" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="quantity" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unitPrice" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="totalPrice" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="salesOrderId" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="chequeddtable_chequeId" class="java.lang.Long"/>
+	<field name="chequeddtable_paymentId" class="java.lang.Long"/>
+	<field name="chequeddtable_bankName" class="java.lang.String"/>
+	<field name="chequeddtable_branchName" class="java.lang.String"/>
+	<field name="chequeddtable_chequeDate" class="java.sql.Date"/>
+	<field name="chequeddtable_clearenceDate" class="java.sql.Date"/>
+	<field name="chequeddtable_receieveDate" class="java.sql.Date"/>
+	<field name="chequeddtable_amount" class="java.lang.Double"/>
+	<field name="chequeddtable_status" class="java.lang.String"/>
+	<field name="dealer_dealerId" class="java.lang.Long"/>
+	<field name="dealer_name" class="java.lang.String"/>
+	<field name="dealer_city" class="java.lang.String"/>
+	<field name="dealer_zipCode" class="java.lang.Long"/>
+	<field name="dealer_state" class="java.lang.String"/>
+	<field name="dealer_mobileNo" class="java.lang.String"/>
+	<field name="dealer_phoneNo" class="java.lang.String"/>
+	<field name="dealer_faxNo" class="java.lang.String"/>
+	<field name="dealer_email" class="java.lang.String"/>
+	<field name="login_loginId" class="java.lang.Long"/>
+	<field name="login_userName" class="java.lang.String"/>
+	<field name="login_password" class="java.lang.String"/>
+	<field name="material_materialId" class="java.lang.Long"/>
+	<field name="material_materialName" class="java.lang.String"/>
+	<field name="material_materialType" class="java.lang.String"/>
+	<field name="material_materialPrice" class="java.lang.Double"/>
+	<field name="material_materialQuality" class="java.lang.String"/>
+	<field name="payment_paymentId" class="java.lang.Long"/>
+	<field name="payment_paymentMethodId" class="java.lang.Long"/>
+	<field name="payment_orderType" class="java.lang.String"/>
+	<field name="payment_referenceId" class="java.lang.Long"/>
+	<field name="payment_amount" class="java.lang.Double"/>
+	<field name="payment_paymentDate" class="java.sql.Date"/>
+	<field name="paymentmethod_paymentMethodId" class="java.lang.Long"/>
+	<field name="paymentmethod_paymentMethodName" class="java.lang.String"/>
+	<field name="product_productId" class="java.lang.Long"/>
+	<field name="product_productName" class="java.lang.String"/>
+	<field name="product_productPrice" class="java.lang.Double"/>
+	<field name="product_productAvailablity" class="java.lang.String"/>
+	<field name="product_productColor" class="java.lang.String"/>
+	<field name="product_productGrade" class="java.lang.String"/>
+	<field name="product_productWeight" class="java.lang.Float"/>
+	<field name="product_productType" class="java.lang.String"/>
+	<field name="purchaseorder_purchaseOrderId" class="java.lang.Long"/>
+	<field name="purchaseorder_supplierId" class="java.lang.Long"/>
+	<field name="purchaseorder_orderDate" class="java.sql.Date"/>
+	<field name="purchaseorder_amount" class="java.lang.Double"/>
+	<field name="purchaseorder_discount" class="java.lang.Double"/>
+	<field name="purchaseorder_status" class="java.lang.String"/>
+	<field name="purchaseorderdetail_purchaseOrderDetailId" class="java.lang.Long"/>
+	<field name="purchaseorderdetail_purchaseOrderId" class="java.lang.Long"/>
+	<field name="purchaseorderdetail_materialId" class="java.lang.Long"/>
+	<field name="purchaseorderdetail_quantity" class="java.lang.Float"/>
+	<field name="purchaseorderdetail_unitPrice" class="java.lang.Double"/>
+	<field name="purchaseorderdetail_totalPrice" class="java.lang.Double"/>
+	<field name="salesorder_salesOrderId" class="java.lang.Long"/>
+	<field name="salesorder_dealerId" class="java.lang.Long"/>
+	<field name="salesorder_orderDate" class="java.sql.Date"/>
+	<field name="salesorder_amount" class="java.lang.Double"/>
+	<field name="salesorder_discount" class="java.lang.Double"/>
+	<field name="salesorder_status" class="java.lang.String"/>
+	<field name="supplier_supplierId" class="java.lang.Long"/>
+	<field name="supplier_name" class="java.lang.String"/>
+	<field name="supplier_city" class="java.lang.String"/>
+	<field name="supplier_zipCode" class="java.lang.Long"/>
+	<field name="supplier_state" class="java.lang.String"/>
+	<field name="supplier_mobileNo" class="java.lang.String"/>
+	<field name="supplier_faxNo" class="java.lang.String"/>
+	<field name="supplier_phoneNo" class="java.lang.String"/>
+	<field name="supplier_email" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="77" y="2" width="100" height="20" uuid="14dd09fc-d3da-4a87-be3c-80de1674d59b"/>
+				<text><![CDATA[chequeId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="2" width="100" height="20" uuid="cf884beb-10c7-4894-aa86-cb8ab1db63a4"/>
+				<text><![CDATA[bankName]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="77" y="43" width="100" height="20" uuid="298e0a1d-8248-4768-a029-c68af2cccba7"/>
+				<textFieldExpression><![CDATA[$F{chequeId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="39" width="100" height="20" uuid="3321d127-6108-4faf-b17a-ceb694965058"/>
+				<textFieldExpression><![CDATA[$F{bankName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -68,21 +68,5 @@ SessionFactory sf = FactroyaManager.getSessionFactory();
 		return e;
 	}
 	
-	public List<Employee> getName(String name) {
-		// TODO Auto-generated method stub
-		Session s = sf.openSession();
-		Transaction tx = s.beginTransaction();
-		Criteria cr = s.createCriteria(Employee.class);
-		//cr.add(Restrictions.eq("firstName",name));
-		//cr.add(Restrictions.ilike("firstName", name));
-		cr.add(Restrictions.eq("firstName", name));
-		List<Employee> empList= cr.list();
-		
-		//Employee empa = (Employee) cr.list();
-		tx.commit();
-		s.close();
-		return empList;
-	}
-	
 
 }

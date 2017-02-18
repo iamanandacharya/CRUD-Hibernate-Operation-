@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+   <class name = "HibernateModel.StudentBean" table = "registration">
+       <id column="ID" name="id" type="long"></id>
+       <property column = "USERNAME" name="userName"  type="String" ></property>
+       <property column = "PASSWORD" name = "password" type= "String" ></property>
+       <property column = "REPASSWORD" name = "rePass" type= "String" ></property>
+       <property column = "PHONENUMBER" name = "phoneNumber" type = "int" ></property> 
+       <property column = "EMAIL" name= "email" type="String"></property>
+       <property name = "ADDRESS" name = "address" type = "string" ></property>  
+   </class> 
+   </hibernate-mapping>
